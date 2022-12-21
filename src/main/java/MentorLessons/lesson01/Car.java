@@ -1,4 +1,4 @@
-package lesson02;
+package MentorLessons.lesson01;
 
 public class Car {
 
