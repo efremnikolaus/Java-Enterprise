@@ -19,6 +19,7 @@ public class Dog extends Animal {
         }
     }
 
+    @Override
     public void swim(int obstacleLength) {
         if (obstacleLength <= swimLimit) {
             System.out.println(name + " swam " + obstacleLength + " meters.");
