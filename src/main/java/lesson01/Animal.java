@@ -1,6 +1,6 @@
 package lesson01;
 
-public class Animal {
+abstract class Animal {
     protected int runLimit;
     protected int swimLimit;
     private static int countAnimal;
@@ -22,9 +22,9 @@ public class Animal {
         System.out.println("Total number of animals: " + getCountAnimal());
     }
 
-    public void run(int obstacleLength) {}
+    public abstract void run(int obstacleLength);
 
-    public void swim(int obstacleLength) {}
+    public abstract void swim(int obstacleLength);
 
     public static int getCountAnimal() {
         return countAnimal;
