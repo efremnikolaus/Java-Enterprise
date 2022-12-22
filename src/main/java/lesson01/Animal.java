@@ -11,11 +11,11 @@ public class Animal {
 
     public static void main(String[] args) {
 
-        Cat cat = new Cat("Barbaris");
+        Animal cat = new Cat("Barbaris");
         cat.run(75);
         cat.swim(1);
 
-        Dog dog = new Dog("Geniy");
+        Animal dog = new Dog("Geniy");
         dog.run(210);
         dog.swim(7);
 
