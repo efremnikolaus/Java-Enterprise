@@ -72,3 +72,6 @@ fabric.properties
 # macOS files
 /DS_Store/
 DS_Store
+
+/target/
+/target/classes/
