@@ -47,6 +47,6 @@ public class Phonebook {
         System.out.println(smiths);
 
         Collections.sort(records);
-        System.out.println(directory.records);
+        System.out.println(records);
     }
 }

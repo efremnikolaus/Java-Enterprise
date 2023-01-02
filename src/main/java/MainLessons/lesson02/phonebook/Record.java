@@ -29,8 +29,4 @@ public class Record implements Comparable<Record> {
     public String getName() {
         return name;
     }
-
-    public String getPhone() {
-        return phone;
-    }
 }
