@@ -1,6 +1,7 @@
 package MainLessons.lesson02.phonebook;
+import java.util.Objects;
 
-public class Record {
+public class Record implements Comparable<Record> {
     private String name;
     private String phone;
 
@@ -8,20 +9,28 @@ public class Record {
         this.name = name;
         this.phone = phone;
     }
+    @Override
+    public String toString() {
+        return name + ": " + phone;
+    }
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Record record = (Record) o;
+        return Objects.equals(name, record.name) &&
+                Objects.equals(phone, record.phone);
+    }
+    @Override
+    public int compareTo(Record o) {
+        return name.compareTo(o.name);
+    }
 
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public String getPhone() {
         return phone;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
     }
 }
