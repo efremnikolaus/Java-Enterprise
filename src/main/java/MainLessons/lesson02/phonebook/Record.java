@@ -1,10 +1,10 @@
 package MainLessons.lesson02.phonebook;
+
 import java.util.Objects;
 
 public class Record implements Comparable<Record> {
     private String name;
     private String phone;
-
     public Record(String name, String phone) {
         this.name = name;
         this.phone = phone;
@@ -25,7 +25,6 @@ public class Record implements Comparable<Record> {
     public int compareTo(Record o) {
         return name.compareTo(o.name);
     }
-
     public String getName() {
         return name;
     }

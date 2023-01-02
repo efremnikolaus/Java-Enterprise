@@ -6,15 +6,12 @@ import java.util.Collections;
 
 public class Phonebook {
     private static List<Record> records;
-
     public Phonebook() {
         records = new ArrayList<>();
     }
-
     public void add(Record record) {
         records.add(record);
     }
-
     public Record find(String name) {
         for (Record record : records) {
             if (record.getName().equals(name)) {
@@ -23,7 +20,6 @@ public class Phonebook {
         }
         return null;
     }
-
     public List<Record> findAll(String name) {
         List<Record> result = new ArrayList<>();
         for (Record record : records) {
@@ -33,7 +29,6 @@ public class Phonebook {
         }
         return result.isEmpty() ? null : result;
     }
-
     public static void main(String[] args) {
         Phonebook directory = new Phonebook();
         directory.add(new Record("John Smith", "92837462"));

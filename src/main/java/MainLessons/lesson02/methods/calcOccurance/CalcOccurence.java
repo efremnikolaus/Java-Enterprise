@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Arrays;
 
-public class calcOccurance {
+public class CalcOccurence {
     public static void calcOccurance(List<String> words) {
         HashMap<String, Integer> wordCounts = new HashMap<>();
         for (String word : words) {
@@ -19,9 +19,8 @@ public class calcOccurance {
             System.out.println(word + ": " + wordCounts.get(word));
         }
     }
-
     public static void main(String[] args) {
         List<String> words = Arrays.asList("bird", "cat", "fox", "bird");
-        calcOccurance.calcOccurance(words);
+        CalcOccurence.calcOccurance(words);
     }
 }

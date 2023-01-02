@@ -1,9 +1,9 @@
-package MainLessons.lesson02.methods.countOccurance;
+package MainLessons.lesson02.methods.countOccurence;
 
 import java.util.List;
 import java.util.Arrays;
 
-public class countOccurance {
+public class CountOccurence {
     public static int countOccurrences(List<String> list, String s) {
         int count = 0;
         for (String element : list) {
@@ -13,7 +13,6 @@ public class countOccurance {
         }
         return count;
     }
-
     public static void main(String[] args) {
         List<String> list = Arrays.asList("Hello", "World", "Hello", "Java");
         String s = "Hello";
