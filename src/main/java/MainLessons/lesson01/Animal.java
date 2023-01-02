@@ -1,4 +1,4 @@
-package lesson01;
+package MainLessons.lesson01;
 
 abstract class Animal {
     protected int runLimit;
