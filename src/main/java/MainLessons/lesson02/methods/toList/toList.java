@@ -7,7 +7,7 @@ public class toList {
     public static void main(String[] args) {
         Integer[] array = {1, 2, 3};
         List<Integer> list = toList(array);
-        System.out.println(list);  // Outputs: [1, 2, 3]
+        System.out.println(list);
     }
 
     public static <T> List<T> toList(T[] array) {

@@ -1,24 +1,24 @@
 package MainLessons.lesson02.methods.countOccurance;
 
 import java.util.List;
+import java.util.Arrays;
 
 public class countOccurance {
-    public static void main(String[] args) {
-        List<String> list = List.of("hello", "world", "hello", "there", "world", "hi");
-        System.out.println(countOccurance(list, "hello"));  // Outputs: 2
-        System.out.println(countOccurance(list, "world"));  // Outputs: 2
-        System.out.println(countOccurance(list, "there"));  // Outputs: 1
-        System.out.println(countOccurance(list, "hi"));  // Outputs: 1
-    }
-
-    public static int countOccurance(List<String> list, String s) {
+    public static int countOccurrences(List<String> list, String s) {
         int count = 0;
-        for (String str : list) {
-            if (str.equals(s)) {
+        for (String element : list) {
+            if (element.equals(s)) {
                 count++;
             }
         }
         return count;
+    }
+
+    public static void main(String[] args) {
+        List<String> list = Arrays.asList("Hello", "World", "Hello", "Java");
+        String s = "Hello";
+        int count = countOccurrences(list, s);
+        System.out.println(count);
     }
 }
 
