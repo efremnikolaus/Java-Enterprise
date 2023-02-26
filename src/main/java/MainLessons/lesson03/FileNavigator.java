@@ -1,47 +1,50 @@
 package MainLessons.lesson03;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 
 public class FileNavigator {
-    private String pathToFile;
-    private HashMap<String, ArrayList<FileData>> files;
+    private Map<String, List<FileData>> files = new HashMap<>();
 
-    public FileNavigator() {
-        this.files = new HashMap<>();
-    }
-
-    void add(String nameOfFile, int sizeInBytes, String pathToFile) {
-        FileData fileData = new FileData(nameOfFile, sizeInBytes, pathToFile);
-        if (files.containsKey(pathToFile)){
-            files.get(pathToFile).add(fileData);
-        }
-        else {
-            ArrayList<FileData> newFiles = new ArrayList<>();
-            newFiles.add(fileData);
-            files.put(pathToFile, newFiles);
-        }
-    }
-    public ArrayList<FileData> find(String pathToFile){
-        if (files.containsKey(pathToFile)){
-            return files.get(pathToFile);
-        }
-        return null;
-        }
-    public ArrayList<FileData> filterBySize(int sizeInBytes) {
-        ArrayList<FileData> filteredFiles = new ArrayList<>();
-        for (FileData file : files) {
-            if (file.getSizeInBytes() <= sizeInBytes) {
-                filteredFiles.add(file);
-            }
-        }
-        return filteredFiles;
-    }
-    void remove(String pathToFile){
-        if (!this.pathToFile.equals(pathToFile)){
+    public void add(String path, FileData file) {
+        if (!path.equals(file.getPath())) {
+            System.out.println("Error. Not valid path!");
             return;
         }
-        files.clear();
+
+        List<FileData> fileList = files.getOrDefault(path, new ArrayList<>());
+        fileList.add(file);
+        files.put(path, fileList);
+    }
+
+    public List<FileData> find(String path) {
+        return files.getOrDefault(path, new ArrayList<>());
+    }
+
+    public List<FileData> filterBySize(String path, long maxSize) {
+        List<FileData> fileList = files.getOrDefault(path, new ArrayList<>());
+        List<FileData> filteredList = new ArrayList<>();
+
+        for (FileData file : fileList) {
+            if (file.getSize() <= maxSize) {
+                filteredList.add(file);
+            }
+        }
+
+        return filteredList;
+    }
+
+    public void remove(String path) {
+        files.remove(path);
+    }
+
+    public List<FileData> sortBySize() {
+        List<FileData> allFiles = new ArrayList<>();
+
+        for (List<FileData> fileList : files.values()) {
+            allFiles.addAll(fileList);
+        }
+
+        Collections.sort(allFiles, Comparator.comparingLong(FileData::getSize));
+        return allFiles;
     }
 }
