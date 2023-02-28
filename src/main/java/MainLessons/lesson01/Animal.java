@@ -1,5 +1,7 @@
 package MainLessons.lesson01;
 
+import java.util.Objects;
+
 abstract class Animal {
     protected int runLimit;
     protected int swimLimit;
