@@ -1,19 +1,29 @@
 package MainLessons.lesson04;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.util.List;
 
-public class ProductFive {
+public class Product {
+    private int id;
     private String type;
-    private double price;
+    private BigDecimal price;
     private boolean discountAvailable;
     private LocalDate addedDate;
 
-    public ProductFive(String type, double price, boolean discountAvailable, LocalDate addedDate) {
+    public Product(String type, BigDecimal price, boolean discountAvailable) {
+        this.id = id;
         this.type = type;
         this.price = price;
         this.discountAvailable = discountAvailable;
         this.addedDate = addedDate;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getType() {
@@ -24,11 +34,11 @@ public class ProductFive {
         this.type = type;
     }
 
-    public double getPrice() {
+    public BigDecimal getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(BigDecimal price) {
         this.price = price;
     }
 
@@ -46,11 +56,5 @@ public class ProductFive {
 
     public void setAddedDate(LocalDate addedDate) {
         this.addedDate = addedDate;
-    }
-    public double calculateTotalPrice(List<ProductFive> products) {
-        return products.stream()
-                .filter(p -> p.getType().equals("Book") && p.getPrice() <= 75 && p.getAddedDate().getYear() == LocalDate.now().getYear())
-                .mapToDouble(ProductFive::getPrice)
-                .sum();
     }
 }
