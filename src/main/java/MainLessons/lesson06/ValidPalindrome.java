@@ -1,6 +1,6 @@
 package MainLessons.lesson06;
 
-public class Palindrome {
+public class ValidPalindrome {
     public boolean isPalindrome(String s) {
         String newStr="";
         String revStr="";

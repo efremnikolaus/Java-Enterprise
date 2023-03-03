@@ -2,7 +2,7 @@ package MainLessons.lesson06;
 
 import java.util.HashSet;
 
-public class ContainsTwice {
+public class ContainsDuplicate {
     public boolean containsDuplicate(int[] nums) {
         HashSet<Integer> hset = new HashSet<Integer>();
         for (int idx = 0; idx < nums.length; idx ++){
